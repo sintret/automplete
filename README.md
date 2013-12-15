@@ -216,7 +216,7 @@ insert  into `city`(`id`,`name`) values (58,'Yogyakarta'); </span>
 </h2>
 
 <ul>
-    <li>  <a href="http://loopj.com/jquery-tokeninput/"></a></li>
+    <li>  <a href="http://loopj.com/jquery-tokeninput/">jQuery Tokeninput</a></li>
 </ul>
 
 <p>Got more examples? Open a pull request.</p>
