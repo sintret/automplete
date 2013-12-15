@@ -7,10 +7,6 @@
 <p>Tokeninput is a jQuery plugin which allows your users to select multiple items from a predefined list, using autocompletion as they type to find each item. You may have seen a similar type of text entry when filling in the recipients field sending messages on facebook.</p>
 
 <h2>
-    <a href="#details" class="anchor" name="details"><span class="octicon octicon-link"></span></a>Details
-</h2>
-
-<h2>
     <a href="#quickstart" class="anchor" name="quickstart"><span class="octicon octicon-link"></span></a>Quickstart
 </h2>
 
@@ -21,7 +17,7 @@
 <p><strong>index.php</strong>:</p>
 
 <div class="highlight highlight-sh">
-    <pre><span class="c"><?php
+    <pre><span class="c">
 $array[] = array('id' => 1, 'name' => 'Bali');
 $array[] = array('id' => 2, 'name' => 'Singapore');
 
@@ -35,7 +31,7 @@ $this->widget('application.extensions.autocomplete.AutoComplete', array(
         //'widthInput' => '50px',
         //'widthToken' => '250px',
 ));
-?></span>
+</span>
     </pre></div>
 
 <p><strong>AjaxController</strong>:</p>
