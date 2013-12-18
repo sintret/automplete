@@ -4,28 +4,23 @@
  * Autocomplete widget class
  *
  * @see https://github.com/sintret/autocomplete
+ * @link http://www.yiiframework.com/extension/autocomplete-facebook/
  *
  * @author Andifitria <sintret@gmail.com>
  * @copyright Copyright &copy; sintret.com 2013-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @package autocomplete.Automplete
+ * @package TEWidget.TEWidget.Automplete
  * 
  * Usage $array = array();
   $array[] = array('id'=>1,'name'=>'Bali');
-  $array[] = array('id'=>2,'name'=>'Singapore');
+  $array[] = array('id'=>2,'name'=>'Lombok');
 
   $this->widget('application.extensions.autocomplete.AutoComplete', array(
   'theme' => 'facebook',
-  'name' => 'searchqueryid',
-  //'prePopulate' => CJavaScript::encode($array),
+  'name' => 'sQuery',
+  'prePopulate' => CJavaScript::encode($array),
   'sourceUrl' => Yii::app()->createUrl('//ajax/suggestSearch'),
-  'hintText' => 'Try Typing places',
-  //'htmlOptions' => array('class' => 'form-control', 'placeholder' => 'Try Typing Places'),
-  //'widthInput' => '50px',
-  //'widthToken' => '250px',
   ));
- * @link http://loopj.com/jquery-tokeninput/
- * @link tourexplora.com
  */
 class AutoComplete extends CInputWidget
 {
@@ -44,6 +39,8 @@ class AutoComplete extends CInputWidget
     public $hintText;
     public $widthInput;
     public $widthToken;
+    public $onAdd;
+    public $onDelete;
 
     function run()
     {
@@ -67,7 +64,6 @@ class AutoComplete extends CInputWidget
         /* @var $cs CClientScript */
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile($assetsUrl . '/css/token-input-facebook.css');
-        $cs->registerCoreScript('jquery');
         $cs->registerScriptFile($assetsUrl . '/js/jquery.tokeninput.js', CClientScript::POS_END);
 
         if ($this->widthInput)
@@ -90,6 +86,11 @@ class AutoComplete extends CInputWidget
             $script .= 'prePopulate:' . $this->prePopulate . ',';
         if ($this->hintText)
             $script .= 'hintText:"' . $this->hintText . '",';
+        if ($this->onAdd)
+            $script .= 'onAdd: function (item) {' . $this->onAdd . '},';
+        if ($this->onDelete)
+            $script .= 'onDelete: function (item) {' . $this->onDelete . '},';
+
         $script .='});});';
 
         $cs->registerScript(uniqid(), $script, CClientScript::POS_END);

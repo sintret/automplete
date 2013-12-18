@@ -224,6 +224,6 @@ insert  into `city`(`id`,`name`) values (58,'Yogyakarta'); </span>
 <h2>
     <a href="#my-other-projects" class="anchor" name="my-other-projects"><span class="octicon octicon-link"></span></a>My Other Projects</h2>
 
-<p>Visit <a href="http://tourexplora.com">The Tourexplora</a> to see and subscribe to other thingies I make.</p>
+<p>Visit <a href="http://tourexplora.com">tourexplora</a> to see and subscribe to other thingies I make.</p>
 
 <h1></h1>
